@@ -2,7 +2,7 @@
  False,
  False,
  True,
- None,
+ ['/Users/banxter/Documents/New project/assets/Simility.icns'],
  None,
  False,
  False,
@@ -58,7 +58,7 @@
  [],
  False,
  False,
- 1788225233,
+ 1788228925,
  [('runw',
    '/Users/banxter/Documents/New '
    'project/.venv/lib/python3.14/site-packages/PyInstaller/bootloader/Darwin-64bit/runw',

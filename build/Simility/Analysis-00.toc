@@ -353,8 +353,14 @@
    '/Users/banxter/Documents/New '
    'project/.venv/lib/python3.14/site-packages/PyInstaller/fake-modules/_pyi_rth_utils/__init__.py',
    'PYMODULE'),
+  ('stringprep',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/stringprep.py',
+   'PYMODULE'),
   ('codeop',
    '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/codeop.py',
+   'PYMODULE'),
+  ('_py_abc',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/_py_abc.py',
    'PYMODULE'),
   ('_py_warnings',
    '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/_py_warnings.py',
@@ -364,12 +370,6 @@
    'PYMODULE'),
   ('fnmatch',
    '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/fnmatch.py',
-   'PYMODULE'),
-  ('stringprep',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/stringprep.py',
-   'PYMODULE'),
-  ('_py_abc',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/_py_abc.py',
    'PYMODULE'),
   ('send2trash',
    '/Users/banxter/Documents/New '
@@ -571,45 +571,21 @@
    '/Users/banxter/Documents/New '
    'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/styles/libqmacstyle.dylib',
    'BINARY'),
-  ('PyQt6/Qt6/plugins/iconengines/libqsvgicon.dylib',
+  ('PyQt6/Qt6/plugins/imageformats/libqtiff.dylib',
    '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/iconengines/libqsvgicon.dylib',
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/imageformats/libqtiff.dylib',
    'BINARY'),
   ('PyQt6/Qt6/plugins/platforms/libqcocoa.dylib',
    '/Users/banxter/Documents/New '
    'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/platforms/libqcocoa.dylib',
    'BINARY'),
-  ('PyQt6/Qt6/plugins/imageformats/libqgif.dylib',
+  ('PyQt6/Qt6/plugins/imageformats/libqico.dylib',
    '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/imageformats/libqgif.dylib',
-   'BINARY'),
-  ('PyQt6/Qt6/plugins/platforms/libqoffscreen.dylib',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/platforms/libqoffscreen.dylib',
-   'BINARY'),
-  ('PyQt6/Qt6/plugins/imageformats/libqtiff.dylib',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/imageformats/libqtiff.dylib',
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/imageformats/libqico.dylib',
    'BINARY'),
   ('PyQt6/Qt6/plugins/imageformats/libqmacjp2.dylib',
    '/Users/banxter/Documents/New '
    'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/imageformats/libqmacjp2.dylib',
-   'BINARY'),
-  ('PyQt6/Qt6/plugins/imageformats/libqwebp.dylib',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/imageformats/libqwebp.dylib',
-   'BINARY'),
-  ('PyQt6/Qt6/plugins/imageformats/libqmacheif.dylib',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/imageformats/libqmacheif.dylib',
-   'BINARY'),
-  ('PyQt6/Qt6/plugins/imageformats/libqicns.dylib',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/imageformats/libqicns.dylib',
-   'BINARY'),
-  ('PyQt6/Qt6/plugins/platforms/libqminimal.dylib',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/platforms/libqminimal.dylib',
    'BINARY'),
   ('PyQt6/Qt6/plugins/imageformats/libqjpeg.dylib',
    '/Users/banxter/Documents/New '
@@ -619,25 +595,49 @@
    '/Users/banxter/Documents/New '
    'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/imageformats/libqtga.dylib',
    'BINARY'),
+  ('PyQt6/Qt6/plugins/platforms/libqoffscreen.dylib',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/platforms/libqoffscreen.dylib',
+   'BINARY'),
+  ('PyQt6/Qt6/plugins/imageformats/libqwbmp.dylib',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/imageformats/libqwbmp.dylib',
+   'BINARY'),
+  ('PyQt6/Qt6/plugins/imageformats/libqmacheif.dylib',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/imageformats/libqmacheif.dylib',
+   'BINARY'),
   ('PyQt6/Qt6/plugins/imageformats/libqpdf.dylib',
    '/Users/banxter/Documents/New '
    'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/imageformats/libqpdf.dylib',
    'BINARY'),
-  ('PyQt6/Qt6/plugins/generic/libqtuiotouchplugin.dylib',
+  ('PyQt6/Qt6/plugins/iconengines/libqsvgicon.dylib',
    '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/generic/libqtuiotouchplugin.dylib',
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/iconengines/libqsvgicon.dylib',
    'BINARY'),
-  ('PyQt6/Qt6/plugins/imageformats/libqico.dylib',
+  ('PyQt6/Qt6/plugins/platforms/libqminimal.dylib',
    '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/imageformats/libqico.dylib',
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/platforms/libqminimal.dylib',
+   'BINARY'),
+  ('PyQt6/Qt6/plugins/imageformats/libqgif.dylib',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/imageformats/libqgif.dylib',
+   'BINARY'),
+  ('PyQt6/Qt6/plugins/imageformats/libqwebp.dylib',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/imageformats/libqwebp.dylib',
+   'BINARY'),
+  ('PyQt6/Qt6/plugins/imageformats/libqicns.dylib',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/imageformats/libqicns.dylib',
    'BINARY'),
   ('PyQt6/Qt6/plugins/imageformats/libqsvg.dylib',
    '/Users/banxter/Documents/New '
    'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/imageformats/libqsvg.dylib',
    'BINARY'),
-  ('PyQt6/Qt6/plugins/imageformats/libqwbmp.dylib',
+  ('PyQt6/Qt6/plugins/generic/libqtuiotouchplugin.dylib',
    '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/imageformats/libqwbmp.dylib',
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/plugins/generic/libqtuiotouchplugin.dylib',
    'BINARY'),
   ('python3.14/lib-dynload/zlib.cpython-314-darwin.so',
    '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/lib-dynload/zlib.cpython-314-darwin.so',
@@ -711,9 +711,6 @@
   ('python3.14/lib-dynload/binascii.cpython-314-darwin.so',
    '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/lib-dynload/binascii.cpython-314-darwin.so',
    'EXTENSION'),
-  ('python3.14/lib-dynload/_heapq.cpython-314-darwin.so',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/lib-dynload/_heapq.cpython-314-darwin.so',
-   'EXTENSION'),
   ('python3.14/lib-dynload/_multibytecodec.cpython-314-darwin.so',
    '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/lib-dynload/_multibytecodec.cpython-314-darwin.so',
    'EXTENSION'),
@@ -734,6 +731,9 @@
    'EXTENSION'),
   ('python3.14/lib-dynload/_codecs_hk.cpython-314-darwin.so',
    '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/lib-dynload/_codecs_hk.cpython-314-darwin.so',
+   'EXTENSION'),
+  ('python3.14/lib-dynload/_heapq.cpython-314-darwin.so',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/lib-dynload/_heapq.cpython-314-darwin.so',
    'EXTENSION'),
   ('python3.14/lib-dynload/_ctypes.cpython-314-darwin.so',
    '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/lib-dynload/_ctypes.cpython-314-darwin.so',
@@ -779,6 +779,10 @@
   ('python3.14/lib-dynload/math.cpython-314-darwin.so',
    '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/lib-dynload/math.cpython-314-darwin.so',
    'EXTENSION'),
+  ('PyQt6/Qt6/lib/QtCore.framework/Versions/A/QtCore',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/lib/QtCore.framework/Versions/A/QtCore',
+   'BINARY'),
   ('PyQt6/Qt6/lib/QtWidgets.framework/Versions/A/QtWidgets',
    '/Users/banxter/Documents/New '
    'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/lib/QtWidgets.framework/Versions/A/QtWidgets',
@@ -787,17 +791,13 @@
    '/Users/banxter/Documents/New '
    'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/lib/QtGui.framework/Versions/A/QtGui',
    'BINARY'),
-  ('PyQt6/Qt6/lib/QtCore.framework/Versions/A/QtCore',
+  ('PyQt6/Qt6/lib/QtPdf.framework/Versions/A/QtPdf',
    '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/lib/QtCore.framework/Versions/A/QtCore',
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/lib/QtPdf.framework/Versions/A/QtPdf',
    'BINARY'),
   ('PyQt6/Qt6/lib/QtSvg.framework/Versions/A/QtSvg',
    '/Users/banxter/Documents/New '
    'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/lib/QtSvg.framework/Versions/A/QtSvg',
-   'BINARY'),
-  ('PyQt6/Qt6/lib/QtPdf.framework/Versions/A/QtPdf',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/lib/QtPdf.framework/Versions/A/QtPdf',
    'BINARY'),
   ('PyQt6/Qt6/lib/QtNetwork.framework/Versions/A/QtNetwork',
    '/Users/banxter/Documents/New '
@@ -818,357 +818,33 @@
    'BINARY')],
  [],
  [],
- [('PyQt6/Qt6/translations/qt_bg.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_bg.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_fi.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_fi.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_fr.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_fr.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_uk.qm',
+ [('PyQt6/Qt6/translations/qt_help_uk.qm',
    '/Users/banxter/Documents/New '
    'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_uk.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_lv.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_lv.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_he.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_he.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_gl.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_gl.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_ko.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_ko.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_it.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_it.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_de.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_de.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_fa.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_fa.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_ja.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_ja.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_gd.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_gd.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_es.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_es.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_da.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_da.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_sk.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_sk.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_sk.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_sk.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_ja.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_ja.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_cs.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_cs.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_it.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_it.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_ka.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_ka.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_sv.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_sv.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_hu.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_hu.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_pt_PT.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_pt_PT.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_cs.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_cs.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_pl.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_pl.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_ar.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_ar.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_es.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_es.qm',
    'DATA'),
   ('PyQt6/Qt6/translations/qt_ko.qm',
    '/Users/banxter/Documents/New '
    'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_ko.qm',
    'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_sk.qm',
+  ('PyQt6/Qt6/translations/qtbase_uk.qm',
    '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_sk.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_ka.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_ka.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_bg.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_bg.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_ka.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_ka.qm',
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_uk.qm',
    'DATA'),
   ('PyQt6/Qt6/translations/qtbase_fa.qm',
    '/Users/banxter/Documents/New '
    'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_fa.qm',
    'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_fr.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_fr.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_en.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_en.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_nl.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_nl.qm',
-   'DATA'),
   ('PyQt6/Qt6/translations/qt_help_zh_CN.qm',
    '/Users/banxter/Documents/New '
    'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_zh_CN.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_nn.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_nn.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_hu.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_hu.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_ca.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_ca.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_cs.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_cs.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_da.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_da.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_pt_BR.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_pt_BR.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_pl.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_pl.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_pt_BR.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_pt_BR.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_ca.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_ca.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_es.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_es.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_tr.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_tr.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_hr.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_hr.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_zh_CN.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_zh_CN.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_ar.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_ar.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_lg.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_lg.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_he.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_he.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_tr.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_tr.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_hu.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_hu.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_sv.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_sv.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_uk.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_uk.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_pl.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_pl.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_fi.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_fi.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_ru.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_ru.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_lt.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_lt.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_gl.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_gl.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_en.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_en.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_de.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_de.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_zh_TW.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_zh_TW.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_en.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_en.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_it.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_it.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_ja.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_ja.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_bg.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_bg.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_nl.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_nl.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_pt_BR.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_pt_BR.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_ru.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_ru.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_uk.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_uk.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_gd.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_gd.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_da.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_da.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_sl.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_sl.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_fr.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_fr.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_nl.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_nl.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_ko.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_ko.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_nn.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_nn.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_nn.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_nn.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_lg.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_lg.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_zh_CN.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_zh_CN.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_sv.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_sv.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_hr.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_hr.qm',
    'DATA'),
   ('PyQt6/Qt6/translations/qt_help_ru.qm',
    '/Users/banxter/Documents/New '
    'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_ru.qm',
    'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_hr.qm',
+  ('PyQt6/Qt6/translations/qt_uk.qm',
    '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_hr.qm',
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_uk.qm',
    'DATA'),
   ('PyQt6/Qt6/translations/qtbase_tr.qm',
    '/Users/banxter/Documents/New '
@@ -1178,41 +854,365 @@
    '/Users/banxter/Documents/New '
    'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_ar.qm',
    'DATA'),
-  ('PyQt6/Qt6/translations/qtbase_lv.qm',
+  ('PyQt6/Qt6/translations/qtbase_da.qm',
    '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_lv.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_zh_TW.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_zh_TW.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_ca.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_ca.qm',
-   'DATA'),
-  ('PyQt6/Qt6/translations/qt_help_de.qm',
-   '/Users/banxter/Documents/New '
-   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_de.qm',
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_da.qm',
    'DATA'),
   ('PyQt6/Qt6/translations/qtbase_zh_TW.qm',
    '/Users/banxter/Documents/New '
    'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_zh_TW.qm',
    'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_ja.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_ja.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_pt_BR.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_pt_BR.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_es.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_es.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_cs.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_cs.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_sv.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_sv.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_pl.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_pl.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_nl.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_nl.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_sv.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_sv.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_ar.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_ar.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_lv.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_lv.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_hu.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_hu.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_ar.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_ar.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_zh_CN.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_zh_CN.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_gl.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_gl.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_gl.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_gl.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_ka.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_ka.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_de.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_de.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_bg.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_bg.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_pt_BR.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_pt_BR.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_lg.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_lg.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_fr.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_fr.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_hu.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_hu.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_nn.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_nn.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_ka.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_ka.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_nl.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_nl.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_es.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_es.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_ca.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_ca.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_es.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_es.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_sk.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_sk.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_pt_PT.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_pt_PT.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_he.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_he.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_it.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_it.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_it.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_it.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_sv.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_sv.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_ca.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_ca.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_zh_CN.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_zh_CN.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_he.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_he.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_nl.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_nl.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_lv.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_lv.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_zh_TW.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_zh_TW.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_pl.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_pl.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_cs.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_cs.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_fr.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_fr.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_fi.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_fi.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_en.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_en.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_ru.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_ru.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_hu.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_hu.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_sk.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_sk.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_sl.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_sl.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_bg.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_bg.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_hr.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_hr.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_ru.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_ru.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_bg.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_bg.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_en.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_en.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_ca.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_ca.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_da.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_da.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_lg.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_lg.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_nn.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_nn.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_da.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_da.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_it.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_it.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_sk.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_sk.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_zh_TW.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_zh_TW.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_tr.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_tr.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_cs.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_cs.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_de.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_de.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_gd.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_gd.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_ka.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_ka.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_fr.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_fr.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_ko.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_ko.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_fa.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_fa.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_nn.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_nn.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_pt_BR.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_pt_BR.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_fi.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_fi.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_pl.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_pl.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_gd.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_gd.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_lt.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_lt.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_ko.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_ko.qm',
+   'DATA'),
   ('PyQt6/Qt6/translations/qt_sl.qm',
    '/Users/banxter/Documents/New '
    'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_sl.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_ja.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_ja.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_help_tr.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_help_tr.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_hr.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_hr.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_hr.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_hr.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_en.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_en.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qtbase_de.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qtbase_de.qm',
+   'DATA'),
+  ('PyQt6/Qt6/translations/qt_ja.qm',
+   '/Users/banxter/Documents/New '
+   'project/.venv/lib/python3.14/site-packages/PyQt6/Qt6/translations/qt_ja.qm',
    'DATA'),
   ('Python', 'Python.framework/Versions/3.14/Python', 'SYMLINK'),
   ('base_library.zip',
    '/Users/banxter/Documents/New project/build/Simility/base_library.zip',
    'DATA'),
+  ('QtCore', 'PyQt6/Qt6/lib/QtCore.framework/Versions/A/QtCore', 'SYMLINK'),
   ('QtWidgets',
    'PyQt6/Qt6/lib/QtWidgets.framework/Versions/A/QtWidgets',
    'SYMLINK'),
   ('QtGui', 'PyQt6/Qt6/lib/QtGui.framework/Versions/A/QtGui', 'SYMLINK'),
-  ('QtCore', 'PyQt6/Qt6/lib/QtCore.framework/Versions/A/QtCore', 'SYMLINK'),
-  ('QtSvg', 'PyQt6/Qt6/lib/QtSvg.framework/Versions/A/QtSvg', 'SYMLINK'),
   ('QtPdf', 'PyQt6/Qt6/lib/QtPdf.framework/Versions/A/QtPdf', 'SYMLINK'),
+  ('QtSvg', 'PyQt6/Qt6/lib/QtSvg.framework/Versions/A/QtSvg', 'SYMLINK'),
   ('QtNetwork',
    'PyQt6/Qt6/lib/QtNetwork.framework/Versions/A/QtNetwork',
    'SYMLINK'),
@@ -1294,73 +1294,7 @@
    '/Library/Frameworks/Python.framework/Versions/3.14/Resources/Info.plist',
    'DATA'),
   ('Python.framework/Versions/Current', '3.14', 'SYMLINK')],
- [('functools',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/functools.py',
-   'PYMODULE'),
-  ('linecache',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/linecache.py',
-   'PYMODULE'),
-  ('reprlib',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/reprlib.py',
-   'PYMODULE'),
-  ('posixpath',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/posixpath.py',
-   'PYMODULE'),
-  ('traceback',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py',
-   'PYMODULE'),
-  ('enum',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/enum.py',
-   'PYMODULE'),
-  ('sre_constants',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/sre_constants.py',
-   'PYMODULE'),
-  ('codecs',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/codecs.py',
-   'PYMODULE'),
-  ('genericpath',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/genericpath.py',
-   'PYMODULE'),
-  ('re._parser',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/re/_parser.py',
-   'PYMODULE'),
-  ('re._constants',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/re/_constants.py',
-   'PYMODULE'),
-  ('re._compiler',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/re/_compiler.py',
-   'PYMODULE'),
-  ('re._casefix',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/re/_casefix.py',
-   'PYMODULE'),
-  ('re',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/re/__init__.py',
-   'PYMODULE'),
-  ('keyword',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/keyword.py',
-   'PYMODULE'),
-  ('locale',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/locale.py',
-   'PYMODULE'),
-  ('warnings',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/warnings.py',
-   'PYMODULE'),
-  ('types',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/types.py',
-   'PYMODULE'),
-  ('sre_parse',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/sre_parse.py',
-   'PYMODULE'),
-  ('copyreg',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copyreg.py',
-   'PYMODULE'),
-  ('stat',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/stat.py',
-   'PYMODULE'),
-  ('heapq',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/heapq.py',
-   'PYMODULE'),
-  ('encodings.zlib_codec',
+ [('encodings.zlib_codec',
    '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/encodings/zlib_codec.py',
    'PYMODULE'),
   ('encodings.uu_codec',
@@ -1729,29 +1663,95 @@
   ('encodings',
    '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/encodings/__init__.py',
    'PYMODULE'),
-  ('ntpath',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/ntpath.py',
+  ('weakref',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/weakref.py',
+   'PYMODULE'),
+  ('reprlib',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/reprlib.py',
+   'PYMODULE'),
+  ('locale',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/locale.py',
+   'PYMODULE'),
+  ('posixpath',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/posixpath.py',
+   'PYMODULE'),
+  ('functools',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/functools.py',
+   'PYMODULE'),
+  ('copyreg',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/copyreg.py',
+   'PYMODULE'),
+  ('traceback',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/traceback.py',
+   'PYMODULE'),
+  ('types',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/types.py',
+   'PYMODULE'),
+  ('heapq',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/heapq.py',
+   'PYMODULE'),
+  ('enum',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/enum.py',
+   'PYMODULE'),
+  ('stat',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/stat.py',
+   'PYMODULE'),
+  ('codecs',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/codecs.py',
    'PYMODULE'),
   ('_weakrefset',
    '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/_weakrefset.py',
    'PYMODULE'),
-  ('_collections_abc',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/_collections_abc.py',
-   'PYMODULE'),
-  ('weakref',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/weakref.py',
+  ('genericpath',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/genericpath.py',
    'PYMODULE'),
   ('sre_compile',
    '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/sre_compile.py',
    'PYMODULE'),
-  ('operator',
-   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/operator.py',
-   'PYMODULE'),
   ('abc',
    '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/abc.py',
    'PYMODULE'),
+  ('warnings',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/warnings.py',
+   'PYMODULE'),
+  ('sre_parse',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/sre_parse.py',
+   'PYMODULE'),
+  ('_collections_abc',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/_collections_abc.py',
+   'PYMODULE'),
+  ('keyword',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/keyword.py',
+   'PYMODULE'),
+  ('ntpath',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/ntpath.py',
+   'PYMODULE'),
   ('io',
    '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/io.py',
+   'PYMODULE'),
+  ('sre_constants',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/sre_constants.py',
+   'PYMODULE'),
+  ('operator',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/operator.py',
+   'PYMODULE'),
+  ('re._parser',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/re/_parser.py',
+   'PYMODULE'),
+  ('re._constants',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/re/_constants.py',
+   'PYMODULE'),
+  ('re._compiler',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/re/_compiler.py',
+   'PYMODULE'),
+  ('re._casefix',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/re/_casefix.py',
+   'PYMODULE'),
+  ('re',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/re/__init__.py',
+   'PYMODULE'),
+  ('linecache',
+   '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/linecache.py',
    'PYMODULE'),
   ('collections',
    '/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/collections/__init__.py',

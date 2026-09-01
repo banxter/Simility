@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none">
+  <defs>
+    <linearGradient id="background" x1="112" y1="80" x2="920" y2="968" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#172A4F"/>
+      <stop offset="0.52" stop-color="#17203D"/>
+      <stop offset="1" stop-color="#0B1021"/>
+    </linearGradient>
+    <linearGradient id="orbit" x1="291" y1="236" x2="743" y2="787" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8CE8FF"/>
+      <stop offset="0.46" stop-color="#6A9BFF"/>
+      <stop offset="1" stop-color="#987CFF"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(516 512) rotate(90) scale(358)">
+      <stop stop-color="#64C9FF" stop-opacity=".25"/>
+      <stop offset="1" stop-color="#64C9FF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="120" y="140" width="784" height="790" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="28" stdDeviation="32" flood-color="#020817" flood-opacity=".56"/>
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" rx="228" fill="url(#background)"/>
+  <circle cx="516" cy="512" r="358" fill="url(#glow)"/>
+  <g filter="url(#shadow)">
+    <path d="M517 190C695 190 839 334 839 512C839 690 695 834 517 834" stroke="url(#orbit)" stroke-width="88" stroke-linecap="round"/>
+    <path d="M517 834C339 834 195 690 195 512C195 334 339 190 517 190" stroke="url(#orbit)" stroke-width="88" stroke-linecap="round" opacity=".72"/>
+    <path d="M515 300C632 300 727 395 727 512C727 629 632 724 515 724" stroke="#B7F5FF" stroke-width="66" stroke-linecap="round"/>
+    <path d="M515 724C398 724 303 629 303 512C303 395 398 300 515 300" stroke="#7F83FF" stroke-width="66" stroke-linecap="round" opacity=".9"/>
+    <circle cx="516" cy="512" r="63" fill="#F4FCFF"/>
+    <circle cx="516" cy="512" r="34" fill="#527BFF"/>
+  </g>
+</svg>

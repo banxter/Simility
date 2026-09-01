@@ -388,13 +388,13 @@
 		<data>
 		YveJ6PoME8X9T+JQV2v0WwfIV4E=
 		</data>
+		<key>Resources/Simility.icns</key>
+		<data>
+		P8VZvWoMcGAQHbZyRU38LVPSS+k=
+		</data>
 		<key>Resources/base_library.zip</key>
 		<data>
-		ez1ypT9TKoUhQTZ8839sksD/0e8=
-		</data>
-		<key>Resources/icon-windowed.icns</key>
-		<data>
-		eEHOuYpZLB0vKGVIWGZOh5rH8+o=
+		vovm4OXlgXFK1l8lN6ViMwUamzk=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -1872,18 +1872,18 @@
 			<key>symlink</key>
 			<string>PyQt6/Qt6/lib/QtWidgets.framework/Versions/A/QtWidgets</string>
 		</dict>
+		<key>Resources/Simility.icns</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			aVKXVuvhdr2bVlOERrwJn2n7Q/zBcBBHMsjJuTW40g4=
+			</data>
+		</dict>
 		<key>Resources/base_library.zip</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			r/EDhbmK+VcxjKAlzXgNlpoi7YHtumPeaRxF/glLlUE=
-			</data>
-		</dict>
-		<key>Resources/icon-windowed.icns</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			uQo7VuWRab4Phv4EEGmfQsyqFqDIXZgO8OtgaAMvCzY=
+			csyuBhYzXbJNOsITNpcPv6bFSLSmExFzcLmwWsgaNvU=
 			</data>
 		</dict>
 		<key>Resources/libcrypto.3.dylib</key>

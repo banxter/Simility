@@ -32,6 +32,7 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon=['/Users/banxter/Documents/New project/assets/Simility.icns'],
 )
 coll = COLLECT(
     exe,
@@ -45,6 +46,6 @@ coll = COLLECT(
 app = BUNDLE(
     coll,
     name='Simility.app',
-    icon=None,
+    icon='/Users/banxter/Documents/New project/assets/Simility.icns',
     bundle_identifier='com.simility.desktop',
 )

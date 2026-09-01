@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none">
+  <defs>
+    <linearGradient id="background" x1="125" y1="72" x2="908" y2="943" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#21154C"/>
+      <stop offset=".48" stop-color="#382069"/>
+      <stop offset="1" stop-color="#24113E"/>
+    </linearGradient>
+    <linearGradient id="tileA" x1="270" y1="231" x2="729" y2="795" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD7A0"/>
+      <stop offset=".48" stop-color="#FF99B9"/>
+      <stop offset="1" stop-color="#BE87FF"/>
+    </linearGradient>
+    <linearGradient id="tileB" x1="285" y1="203" x2="752" y2="779" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFEDC8"/>
+      <stop offset="1" stop-color="#BB81FF"/>
+    </linearGradient>
+    <filter id="shadow" x="142" y="149" width="735" height="744" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="28" stdDeviation="35" flood-color="#140727" flood-opacity=".65"/>
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" rx="228" fill="url(#background)"/>
+  <g filter="url(#shadow)">
+    <rect x="236" y="249" width="400" height="400" rx="108" transform="rotate(-18 236 249)" fill="url(#tileA)" opacity=".86"/>
+    <rect x="390" y="184" width="400" height="400" rx="108" transform="rotate(24 390 184)" fill="url(#tileB)" opacity=".82"/>
+    <rect x="338" y="390" width="400" height="400" rx="108" transform="rotate(12 338 390)" fill="url(#tileA)"/>
+    <path d="M425 427C425 389 456 358 494 358H604C642 358 673 389 673 427V542C673 580 642 611 604 611H494C456 611 425 580 425 542V427Z" fill="#FFF9F0"/>
+    <path d="M485 510H613" stroke="#663D9D" stroke-width="38" stroke-linecap="round"/>
+    <path d="M549 446V574" stroke="#663D9D" stroke-width="38" stroke-linecap="round"/>
+  </g>
+</svg>
