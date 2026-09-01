@@ -133,11 +133,26 @@ python Simility.py
 
 The application includes a macOS launch workaround that locates PyQt's bundled Cocoa platform plugin automatically. If you launch it from an IDE, configure that IDE to use the project's `.venv` interpreter.
 
+## macOS application bundle
+
+A ready-to-open macOS app bundle is available at [`dist/Simility.app`](dist/Simility.app). Double-click it in Finder, or drag it into your Applications folder for convenient access.
+
+To rebuild the bundle after changing the source code:
+
+```bash
+python -m pip install pyinstaller
+bash build_macos_app.sh
+```
+
+The build creates an Apple Silicon (`arm64`) bundle and applies an ad-hoc local signature. It is suitable for use on your own Mac; distributing it to other Macs may require Apple Developer signing and notarization.
+
 ## Project structure
 
 ```
 .
 ├── Simility.py              # Application source code
+├── build_macos_app.sh        # Rebuilds the macOS .app bundle
+├── dist/Simility.app         # Ready-to-open macOS application
 ├── requirements.txt         # Python dependencies
 └── README.md                # Project documentation
 ```
