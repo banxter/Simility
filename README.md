@@ -173,4 +173,7 @@ The build creates an Apple Silicon (`arm64`) bundle, applies an ad-hoc local sig
 
 ## License
 
-Add the license appropriate for your project before publishing.
+
+MIT License - see [LICENSE](LICENSE) file for details.
+
+Handy is open-source software, but the Handy name, logo, icon, and brand assets are not open-source. Unofficial forks, rewrites, and redistributions must use their own branding and must not imply endorsement or affiliation.
