@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['Simility.py'],
+    ['/Users/banxter/Documents/New project/Simility.py'],
     pathex=[],
     binaries=[],
     datas=[],

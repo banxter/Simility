@@ -58,7 +58,7 @@
  [],
  False,
  False,
- 1788222236,
+ 1788225233,
  [('runw',
    '/Users/banxter/Documents/New '
    'project/.venv/lib/python3.14/site-packages/PyInstaller/bootloader/Darwin-64bit/runw',

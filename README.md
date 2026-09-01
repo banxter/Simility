@@ -133,18 +133,24 @@ python Simility.py
 
 The application includes a macOS launch workaround that locates PyQt's bundled Cocoa platform plugin automatically. If you launch it from an IDE, configure that IDE to use the project's `.venv` interpreter.
 
-## macOS application bundle
+## macOS installer
 
-A ready-to-open macOS app bundle is available at [`dist/Simility.app`](dist/Simility.app). Double-click it in Finder, or drag it into your Applications folder for convenient access.
+A ready-to-open installer is available at [`dist/Simility.dmg`](dist/Simility.dmg).
 
-To rebuild the bundle after changing the source code:
+1. Double-click `Simility.dmg` in Finder.
+2. Drag **Simility.app** onto the **Applications** shortcut inside the installer window.
+3. Open Simility from your Applications folder.
+
+The standalone app bundle is also available at [`dist/Simility.app`](dist/Simility.app).
+
+To rebuild both the `.app` and `.dmg` after changing the source code:
 
 ```bash
 python -m pip install pyinstaller
 bash build_macos_app.sh
 ```
 
-The build creates an Apple Silicon (`arm64`) bundle and applies an ad-hoc local signature. It is suitable for use on your own Mac; distributing it to other Macs may require Apple Developer signing and notarization.
+The build creates an Apple Silicon (`arm64`) bundle, applies an ad-hoc local signature, and packages the bundle in a Finder-ready DMG. It is suitable for use on your own Mac; distributing it to other Macs may require Apple Developer signing and notarization.
 
 ## Project structure
 
@@ -153,6 +159,7 @@ The build creates an Apple Silicon (`arm64`) bundle and applies an ad-hoc local 
 ├── Simility.py              # Application source code
 ├── build_macos_app.sh        # Rebuilds the macOS .app bundle
 ├── dist/Simility.app         # Ready-to-open macOS application
+├── dist/Simility.dmg         # Drag-and-drop macOS installer
 ├── requirements.txt         # Python dependencies
 └── README.md                # Project documentation
 ```
@@ -166,7 +173,4 @@ The build creates an Apple Silicon (`arm64`) bundle and applies an ad-hoc local 
 
 ## License
 
-
-MIT License - see [LICENSE](LICENSE) file for details.
-
-Handy is open-source software, but the Handy name, logo, icon, and brand assets are not open-source. Unofficial forks, rewrites, and redistributions must use their own branding and must not imply endorsement or affiliation.
+Add the license appropriate for your project before publishing.
