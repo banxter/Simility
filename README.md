@@ -4,6 +4,16 @@
 
 Built with Python and PyQt6.
 
+## Screenshots
+
+### Light appearance
+
+![Simility in Light appearance](screenshots/Simility-light.png)
+
+### Dark appearance
+
+![Simility in Dark appearance](screenshots/Simility-dark.png)
+
 ## Highlights
 
 - Find files with similar filename beginnings, with an adjustable similarity threshold.
@@ -173,4 +183,6 @@ The build creates an Apple Silicon (`arm64`) bundle, applies an ad-hoc local sig
 
 ## License
 
-Add the license appropriate for your project before publishing.
+MIT License - see [LICENSE](LICENSE) file for details.
+
+Handy is open-source software, but the Handy name, logo, icon, and brand assets are not open-source. Unofficial forks, rewrites, and redistributions must use their own branding and must not imply endorsement or affiliation.
