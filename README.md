@@ -1,6 +1,6 @@
 # Simility
 
-> A macOS-friendly desktop utility for reviewing groups of similarly named files and safely clearing out versions you no longer need.
+> *A macOS-friendly desktop utility for reviewing groups of similarly named files and safely clearing out versions you no longer need.*
 
 Built with Python and PyQt6.
 
@@ -32,8 +32,8 @@ Files are grouped when the common beginning of their names reaches the configure
 
 For example, at the default 30% similarity, files such as `Report_January.pdf`, `Report_February.pdf`, and `Report_March.xlsx` can appear in the same group even though their names have different lengths.
 
-- Default similarity: **30%**
-- Adjustable range: **1% to 100%**
+- Default similarity: 30%
+- Adjustable range: 1% to 100%
 - Filename extensions do not affect grouping.
 - `.DS_Store` files are always ignored.
 - Only groups with two or more matching files are shown.
@@ -42,10 +42,10 @@ For example, at the default 30% similarity, files such as `Report_January.pdf`, 
 
 Use **Include Sub Folders** to control where the app searches:
 
-| Setting | Behavior |
-| --- | --- |
-| Enabled | Searches the chosen folder and all nested folders. |
-| Disabled | Searches only files directly inside the chosen folder. |
+| **Setting** | **Behavior**                                           |
+|-----------|------------------------------------------------------|
+| Enabled     | Searches the chosen folder and all nested folders.     |
+| Disabled    | Searches only files directly inside the chosen folder. |
 
 ### Results list
 
@@ -53,11 +53,11 @@ Matching files appear in expandable groups. Every group title is bold and each g
 
 The resizable table includes:
 
-| Column | Description |
-| --- | --- |
-| File | Filename and selection checkbox |
-| Location | Folder containing the file |
-| Size | File size in a readable format |
+| **Column**    | **Description**                   |
+|-------------|---------------------------------|
+| File          | Filename and selection checkbox   |
+| Location      | Folder containing the file        |
+| Size          | File size in a readable format    |
 | Date Modified | Local last-modified date and time |
 
 Drag any table header divider to resize its column.
@@ -66,12 +66,12 @@ Drag any table header divider to resize its column.
 
 The bottom action bar provides fast ways to prepare a cleanup:
 
-| Control | What it does |
-| --- | --- |
-| **Select All Results** | Selects every file in every visible group. |
-| **Select All Older Files** | Selects every file except the newest one in each group. |
-| **Reverse Selection** | Inverts the selection state of every visible file. |
-| **Clear Selection** | Clears every selected file. |
+| **Control**            | **What it does**                                        |
+|----------------------|-------------------------------------------------------|
+| Select All Results     | Selects every file in every visible group.              |
+| Select All Older Files | Selects every file except the newest one in each group. |
+| Reverse Selection      | Inverts the selection state of every visible file.      |
+| Clear Selection        | Clears every selected file.                             |
 
 You can also select an entire group or make individual file selections with the checkboxes.
 
@@ -79,17 +79,17 @@ You can also select an entire group or make individual file selections with the 
 
 The app never deletes selected files permanently.
 
-- **Move to Trash** sends selected files to the macOS Trash after confirmation, so they can be restored later if necessary.
-- **Move to Another Folder** lets you choose a destination folder, confirms the action, and then moves the selected files there.
-- To avoid accidental data loss, a file is **not** moved if a file with the same name already exists in the destination folder. Any skipped files are reported after the operation.
+- Move to Trash sends selected files to the macOS Trash after confirmation, so they can be restored later if necessary.
+- Move to Another Folder lets you choose a destination folder, confirms the action, and then moves the selected files there.
+- To avoid accidental data loss, a file is not moved if a file with the same name already exists in the destination folder. Any skipped files are reported after the operation.
 - The results refresh after a move so they always reflect the files currently on disk.
 
 ### Light and Dark appearance
 
 Use the sun/moon button in the top-right corner to switch themes:
 
-- **☀ Light** — a bright, high-contrast workspace with clearly visible checkbox borders.
-- **☾ Dark** — a low-glare dark interface with readable table content and controls.
+- ☀ Light — a bright, high-contrast workspace with clearly visible checkbox borders.
+- ☾ Dark — a low-glare dark interface with readable table content and controls.
 
 ## Remembered preferences
 
@@ -111,7 +111,7 @@ The restored folder is selected automatically, but the app does not rescan it un
 - PyQt6
 - Send2Trash
 
-All Python dependencies are listed in [`requirements.txt`](requirements.txt).
+All Python dependencies are listed in [\`requirements.txt\`](requirements.txt).
 
 ## Installation
 
@@ -135,7 +135,7 @@ The application includes a macOS launch workaround that locates PyQt's bundled C
 
 ## Project structure
 
-```text
+```
 .
 ├── Simility.py              # Application source code
 ├── requirements.txt         # Python dependencies
