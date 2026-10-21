@@ -32,28 +32,33 @@ fi
   --osx-bundle-identifier com.simility.desktop \
   "$PROJECT_DIR/Simility.py"
 
-# Remove macOS metadata that prevents ad-hoc signing on some installations.
-# Framework bundles can carry Finder metadata on nested paths, so clear it
-# recursively before signing the completed app bundle.
-xattr -cr "$APP_BUNDLE"
-codesign --force --deep --sign - "$APP_BUNDLE"
-codesign --verify --deep --strict --verbose=2 "$APP_BUNDLE"
+# The project folder may be managed by a macOS file provider. Those services
+# can add Finder metadata to framework files after PyInstaller creates them,
+# which invalidates a code signature. Make, clean, and sign the release copy
+# in /private/tmp before using it to create the installer.
+SIGNING_STAGING_DIR="$(mktemp -d /private/tmp/simility-signing.XXXXXX)"
+CLEAN_APP_BUNDLE="$SIGNING_STAGING_DIR/Simility.app"
+DMG_STAGING_DIR="$(mktemp -d /private/tmp/simility-dmg.XXXXXX)"
+RW_DMG_FILE="/private/tmp/Simility-rw.dmg"
+MOUNT_POINT="/private/tmp/simility-volume"
+
+cleanup_release_build() {
+  hdiutil detach "$MOUNT_POINT" -quiet 2>/dev/null || true
+  rm -rf "$SIGNING_STAGING_DIR" "$DMG_STAGING_DIR" "$MOUNT_POINT"
+  rm -f "$RW_DMG_FILE"
+}
+trap cleanup_release_build EXIT
+
+ditto --noextattr --norsrc "$APP_BUNDLE" "$CLEAN_APP_BUNDLE"
+xattr -cr "$CLEAN_APP_BUNDLE"
+codesign --force --deep --sign - "$CLEAN_APP_BUNDLE"
+codesign --verify --deep --strict --verbose=2 "$CLEAN_APP_BUNDLE"
 
 # Build a Finder-ready installer image: users drag Simility.app to the
 # Applications alias shown when they open the disk image.
-mkdir -p "$PROJECT_DIR/build"
-DMG_STAGING_DIR="$(mktemp -d "$PROJECT_DIR/build/simility-dmg.XXXXXX")"
-RW_DMG_FILE="$PROJECT_DIR/build/Simility-rw.dmg"
-MOUNT_POINT="$PROJECT_DIR/build/Simility-volume"
-cleanup_dmg_build() {
-  hdiutil detach "$MOUNT_POINT" -quiet 2>/dev/null || true
-  rm -rf "$DMG_STAGING_DIR" "$MOUNT_POINT"
-  rm -f "$RW_DMG_FILE"
-}
-trap cleanup_dmg_build EXIT
-ditto "$APP_BUNDLE" "$DMG_STAGING_DIR/Simility.app"
+ditto --noextattr --norsrc "$CLEAN_APP_BUNDLE" "$DMG_STAGING_DIR/Simility.app"
 ln -s /Applications "$DMG_STAGING_DIR/Applications"
-ditto "$ICON_FILE" "$DMG_STAGING_DIR/.VolumeIcon.icns"
+ditto --noextattr --norsrc "$ICON_FILE" "$DMG_STAGING_DIR/.VolumeIcon.icns"
 SetFile -a V "$DMG_STAGING_DIR/.VolumeIcon.icns"
 hdiutil create \
   -volname "Simility" \

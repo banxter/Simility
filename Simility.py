@@ -13,6 +13,9 @@ from datetime import datetime
 from pathlib import Path
 
 
+app_version = "1.3.3"
+
+
 # On some macOS installations Qt does not discover PyQt's bundled platform
 # plugins from its default path. Qt reads QT_PLUGIN_PATH while its libraries
 # are loaded, so relaunch before importing any PyQt modules.
@@ -57,11 +60,13 @@ from PyQt6.QtWidgets import (
     QApplication,
     QAbstractItemView,
     QCheckBox,
+    QDialog,
     QFileDialog,
     QFrame,
     QHBoxLayout,
     QHeaderView,
     QLabel,
+    QLineEdit,
     QMainWindow,
     QMessageBox,
     QPushButton,
@@ -73,6 +78,32 @@ from PyQt6.QtWidgets import (
     QWidget,
 )
 from send2trash import send2trash
+
+
+FILE_SIZE_ROLE = int(Qt.ItemDataRole.UserRole) + 1
+
+FILE_TYPE_GROUPS: dict[str, tuple[str, ...]] = {
+    "Apps": ("apk", "app", "dmg", "exe", "img", "iso", "pkg"),
+    "Codes": (
+        "bat", "c", "cmake", "conf", "cpp", "cs", "css", "dart", "ipynb",
+        "java", "js", "json", "kt", "lua", "py", "r", "rs", "ruby", "sh",
+        "sql", "sqlite", "swift", "ts", "xml", "yaml", "yml",
+    ),
+    "Compressed": ("7z", "gz", "rar", "tar", "tgz", "zip"),
+    "Documents": (
+        "csv", "doc", "docx", "epub", "md", "odt", "pdf", "ppt", "pptx",
+        "rtf", "txt", "xls", "xlsx",
+    ),
+    "Music": ("aac", "aiff", "alac", "flac", "mp3", "ogg", "opus", "wav"),
+    "Pictures": (
+        "ai", "avif", "dng", "gif", "heic", "jpeg", "jpg", "png", "psd",
+        "svg", "tiff", "webp",
+    ),
+    "Videos": ("avi", "hevc", "mkv", "mov", "mp4", "ts", "webm"),
+}
+ALL_FILE_TYPES = frozenset(
+    extension for extensions in FILE_TYPE_GROUPS.values() for extension in extensions
+)
 
 
 @dataclass(frozen=True)
@@ -99,15 +130,42 @@ def matching_prefix(name: str, percentage: int) -> str:
     return stem[:character_count].casefold()
 
 
+def comparison_name(name: str, simplify: bool = False) -> str:
+    """Return the filename stem used for similarity comparisons only."""
+
+    stem = Path(name).stem.strip() or name.strip()
+    if simplify:
+        stem = stem.translate(str.maketrans("-_+.", "    "))
+    return stem.casefold()
+
+
+def normalize_file_extensions(text: str) -> set[str]:
+    """Return lowercase, dot-free extensions entered in the custom field."""
+
+    return {
+        extension.strip().lstrip(".").casefold()
+        for extension in text.split()
+        if extension.strip().lstrip(".")
+    }
+
+
 def find_similar_files(
-    folder: Path, percentage: int, include_subfolders: bool = True
+    folder: Path,
+    percentage: int,
+    include_subfolders: bool = True,
+    simplify_names: bool = False,
+    included_file_types: set[str] | None = None,
 ) -> dict[str, list[FileEntry]]:
     """Group files whose common start meets the requested percentage.
 
     Names can have different lengths: ``Report_one`` and ``Report_three`` are
     still grouped at 30% because their shared beginning is at least 30% of
     each stem. Matching pairs are collected into connected groups. The search
-    can include subfolders or be limited to the selected folder itself.
+    can include subfolders or be limited to the selected folder itself. When
+    requested, dashes, underscores, periods, and plus signs are treated as
+    spaces for matching while displayed filenames remain unchanged. When a
+    type filter is provided, only files with one of the included extensions
+    are considered.
     """
 
     candidates: list[tuple[Path, str]] = []
@@ -118,9 +176,13 @@ def find_similar_files(
     for path in paths:
         if path.name == ".DS_Store":
             continue
-        stem = path.stem.strip() or path.name.strip()
+        if included_file_types is not None:
+            extension = path.suffix.lstrip(".").casefold()
+            if extension not in included_file_types:
+                continue
+        stem = comparison_name(path.name, simplify_names)
         if stem:
-            candidates.append((path, stem.casefold()))
+            candidates.append((path, stem))
 
     parent = list(range(len(candidates)))
 
@@ -176,6 +238,8 @@ class Simility(QMainWindow):
             "Simility", "Simility"
         )
         self.selected_folder: Path | None = None
+        self.selected_file_types: set[str] = set(ALL_FILE_TYPES)
+        self.custom_file_types: set[str] = set()
         self.setWindowTitle("Simility")
         self.setMinimumSize(820, 580)
         self._build_interface()
@@ -240,6 +304,13 @@ class Simility(QMainWindow):
         self.include_subfolders_checkbox = QCheckBox("Include Sub Folders")
         self.include_subfolders_checkbox.setChecked(True)
         controls_layout.addWidget(self.include_subfolders_checkbox)
+        self.simplify_file_names_checkbox = QCheckBox(
+            "Simplify file names before checking for similarity"
+        )
+        controls_layout.addWidget(self.simplify_file_names_checkbox)
+        self.file_type_selector_button = QPushButton("Select File Types")
+        self.file_type_selector_button.clicked.connect(self.select_file_types)
+        controls_layout.addWidget(self.file_type_selector_button)
         layout.addWidget(controls)
 
         self.summary_label = QLabel("Select a folder, then search for matching file names.")
@@ -282,7 +353,11 @@ class Simility(QMainWindow):
         bottom_row.addWidget(self.clean_button)
         layout.addLayout(bottom_row)
 
-        self.setStatusBar(QStatusBar())
+        status_bar = QStatusBar()
+        self.setStatusBar(status_bar)
+        self.version_label = QLabel(f"V{app_version}")
+        self.version_label.setObjectName("versionLabel")
+        status_bar.addPermanentWidget(self.version_label)
         self._apply_theme("light")
 
     def _update_similarity_label(self, value: int) -> None:
@@ -339,6 +414,7 @@ class Simility(QMainWindow):
             f"QMainWindow {{ background: {colors['window']}; }}"
             f"QLabel#title {{ font-size: 28px; font-weight: 700; color: {colors['text']}; }}"
             f"QLabel#folderLabel {{ color: {colors['text']}; padding: 8px 10px; background: {colors['folder']}; border: 1px solid {colors['border']}; border-radius: 6px; }}"
+            f"QLabel#versionLabel {{ color: {colors['muted']}; padding-right: 4px; }}"
             f"QFrame#controls {{ background: {colors['base']}; border: 1px solid {colors['border']}; border-radius: 8px; }}"
             f"QPushButton {{ color: {colors['text']}; background: {colors['button']}; border: 1px solid {colors['border']}; border-radius: 5px; padding: 7px 12px; }}"
             f"QPushButton:hover {{ background: {colors['hover']}; }}"
@@ -363,6 +439,24 @@ class Simility(QMainWindow):
         self.include_subfolders_checkbox.setChecked(
             self.settings.value("matching/include_subfolders", True, type=bool)
         )
+        self.simplify_file_names_checkbox.setChecked(
+            self.settings.value("matching/simplify_file_names", False, type=bool)
+        )
+        saved_file_types = self.settings.value("matching/file_types", None)
+        if saved_file_types is None:
+            self.selected_file_types = set(ALL_FILE_TYPES)
+        elif isinstance(saved_file_types, str):
+            self.selected_file_types = normalize_file_extensions(saved_file_types)
+        else:
+            self.selected_file_types = {
+                str(extension).strip().lstrip(".").casefold()
+                for extension in saved_file_types
+                if str(extension).strip().lstrip(".")
+            }
+        self.selected_file_types.intersection_update(ALL_FILE_TYPES)
+        self.custom_file_types = normalize_file_extensions(
+            self.settings.value("matching/custom_file_types", "", type=str)
+        )
         self._apply_theme(self.settings.value("appearance/theme", "light", type=str))
 
         width = self.settings.value("window/width", 1100, type=int)
@@ -382,10 +476,20 @@ class Simility(QMainWindow):
                 self.selected_folder = folder
                 self.folder_label.setText(str(folder))
                 self.statusBar().showMessage("Last selected folder restored. Click Search Files to scan it.")
+                return
+        self.statusBar().showMessage("Select a folder to start the analyze.")
 
     def _save_settings(self) -> None:
         self.settings.setValue("matching/percentage", self.similarity_slider.value())
         self.settings.setValue("matching/include_subfolders", self.include_subfolders_checkbox.isChecked())
+        self.settings.setValue(
+            "matching/simplify_file_names",
+            self.simplify_file_names_checkbox.isChecked(),
+        )
+        self.settings.setValue("matching/file_types", sorted(self.selected_file_types))
+        self.settings.setValue(
+            "matching/custom_file_types", " ".join(sorted(self.custom_file_types))
+        )
         self.settings.setValue("appearance/theme", self.theme)
         self.settings.setValue(
             "matching/folder", str(self.selected_folder) if self.selected_folder else ""
@@ -409,6 +513,159 @@ class Simility(QMainWindow):
             self.folder_label.setText(str(self.selected_folder))
             self.statusBar().showMessage("Folder selected. Choose a percentage and search.")
 
+    def select_file_types(self) -> None:
+        """Open the modal selector for built-in and custom file extensions."""
+
+        dialog = QDialog(self)
+        dialog.setWindowTitle("Select File Types")
+        dialog.setModal(True)
+        dialog.resize(540, 620)
+        layout = QVBoxLayout(dialog)
+
+        selector = QTreeWidget()
+        selector.setColumnCount(1)
+        selector.setHeaderLabels(["File Type Selector"])
+        selector.setAlternatingRowColors(True)
+        selector.setSelectionMode(QAbstractItemView.SelectionMode.NoSelection)
+        selector.blockSignals(True)
+        for group_name in sorted(FILE_TYPE_GROUPS):
+            group = QTreeWidgetItem([group_name])
+            group.setFlags(
+                group.flags()
+                | Qt.ItemFlag.ItemIsUserCheckable
+                | Qt.ItemFlag.ItemIsAutoTristate
+            )
+            selector.addTopLevelItem(group)
+            for extension in sorted(FILE_TYPE_GROUPS[group_name]):
+                item = QTreeWidgetItem([f".{extension}"])
+                item.setData(0, Qt.ItemDataRole.UserRole, extension)
+                item.setFlags(item.flags() | Qt.ItemFlag.ItemIsUserCheckable)
+                item.setCheckState(
+                    0,
+                    Qt.CheckState.Checked
+                    if extension in self.selected_file_types
+                    else Qt.CheckState.Unchecked,
+                )
+                group.addChild(item)
+            selected_count = sum(
+                extension in self.selected_file_types
+                for extension in FILE_TYPE_GROUPS[group_name]
+            )
+            group.setCheckState(
+                0,
+                Qt.CheckState.Checked
+                if selected_count == group.childCount()
+                else (
+                    Qt.CheckState.PartiallyChecked
+                    if selected_count
+                    else Qt.CheckState.Unchecked
+                ),
+            )
+            group.setExpanded(True)
+        selector.blockSignals(False)
+        layout.addWidget(selector, 1)
+
+        def update_group_state(group: QTreeWidgetItem) -> None:
+            checked_count = sum(
+                group.child(index).checkState(0) == Qt.CheckState.Checked
+                for index in range(group.childCount())
+            )
+            group.setCheckState(
+                0,
+                Qt.CheckState.Checked
+                if checked_count == group.childCount()
+                else (
+                    Qt.CheckState.PartiallyChecked
+                    if checked_count
+                    else Qt.CheckState.Unchecked
+                ),
+            )
+
+        def sync_group_selection(item: QTreeWidgetItem, _: int) -> None:
+            if item.parent() is not None:
+                selector.blockSignals(True)
+                update_group_state(item.parent())
+                selector.blockSignals(False)
+                return
+
+            state = item.checkState(0)
+            if state == Qt.CheckState.PartiallyChecked:
+                return
+            selector.blockSignals(True)
+            for index in range(item.childCount()):
+                item.child(index).setCheckState(0, state)
+            selector.blockSignals(False)
+
+        selector.itemChanged.connect(sync_group_selection)
+
+        custom_label = QLabel("Custom File Types")
+        layout.addWidget(custom_label)
+        custom_input = QLineEdit(" ".join(sorted(self.custom_file_types)))
+        custom_input.setPlaceholderText("Example: dng zfs pkg")
+        layout.addWidget(custom_input)
+
+        button_row = QHBoxLayout()
+        select_all_button = QPushButton("Select All")
+        reverse_button = QPushButton("Reverse Selection")
+        clear_button = QPushButton("Clear Selection")
+
+        def set_all(state: Qt.CheckState) -> None:
+            selector.blockSignals(True)
+            for row in range(selector.topLevelItemCount()):
+                group = selector.topLevelItem(row)
+                for index in range(group.childCount()):
+                    group.child(index).setCheckState(0, state)
+                group.setCheckState(0, state)
+            selector.blockSignals(False)
+
+        def reverse_selection() -> None:
+            selector.blockSignals(True)
+            for row in range(selector.topLevelItemCount()):
+                group = selector.topLevelItem(row)
+                for index in range(group.childCount()):
+                    item = group.child(index)
+                    item.setCheckState(
+                        0,
+                        Qt.CheckState.Unchecked
+                        if item.checkState(0) == Qt.CheckState.Checked
+                        else Qt.CheckState.Checked,
+                    )
+                update_group_state(group)
+            selector.blockSignals(False)
+
+        select_all_button.clicked.connect(lambda: set_all(Qt.CheckState.Checked))
+        reverse_button.clicked.connect(reverse_selection)
+        clear_button.clicked.connect(lambda: set_all(Qt.CheckState.Unchecked))
+        button_row.addWidget(select_all_button)
+        button_row.addWidget(reverse_button)
+        button_row.addWidget(clear_button)
+        button_row.addStretch()
+        cancel_button = QPushButton("Cancel")
+        done_button = QPushButton("Done")
+        done_button.setObjectName("primaryButton")
+        cancel_button.clicked.connect(dialog.reject)
+        done_button.clicked.connect(dialog.accept)
+        button_row.addWidget(cancel_button)
+        button_row.addWidget(done_button)
+        layout.addLayout(button_row)
+
+        if dialog.exec() != QDialog.DialogCode.Accepted:
+            return
+
+        self.selected_file_types = {
+            str(group.child(index).data(0, Qt.ItemDataRole.UserRole))
+            for row in range(selector.topLevelItemCount())
+            for group in [selector.topLevelItem(row)]
+            for index in range(group.childCount())
+            if group.child(index).checkState(0) == Qt.CheckState.Checked
+        }
+        self.custom_file_types = normalize_file_extensions(custom_input.text())
+        self.settings.setValue("matching/file_types", sorted(self.selected_file_types))
+        self.settings.setValue(
+            "matching/custom_file_types", " ".join(sorted(self.custom_file_types))
+        )
+        self.settings.sync()
+
     def search_files(self) -> None:
         if self.selected_folder is None:
             QMessageBox.information(self, "Choose a folder", "Please choose a folder before searching.")
@@ -421,6 +678,8 @@ class Simility(QMainWindow):
                 self.selected_folder,
                 self.similarity_slider.value(),
                 self.include_subfolders_checkbox.isChecked(),
+                self.simplify_file_names_checkbox.isChecked(),
+                self.selected_file_types | self.custom_file_types,
             )
             self._show_results(groups)
         except OSError as error:
@@ -435,6 +694,7 @@ class Simility(QMainWindow):
         file_count = 0
         for prefix, entries in sorted(groups.items(), key=lambda item: item[0]):
             group = QTreeWidgetItem([f'“{prefix}” — {len(entries)} matching files', "", "", ""])
+            group.setData(0, Qt.ItemDataRole.UserRole, prefix)
             title_font = QFont(group.font(0))
             title_font.setBold(True)
             group.setFont(0, title_font)
@@ -442,22 +702,26 @@ class Simility(QMainWindow):
             group.setCheckState(0, Qt.CheckState.Unchecked)
             self.results.addTopLevelItem(group)
             group.setExpanded(True)
-            files_with_details: list[tuple[FileEntry, str, str, float]] = []
+            files_with_details: list[tuple[FileEntry, str, str, float, int]] = []
             for entry in entries:
                 try:
                     details = entry.path.stat()
                     size_text = self._format_size(details.st_size)
                     modified_text = self._format_modified_date(details.st_mtime)
                     modified_timestamp = details.st_mtime
+                    size_bytes = details.st_size
                 except OSError:
                     size_text = "Unavailable"
                     modified_text = "Unavailable"
                     modified_timestamp = float("-inf")
-                files_with_details.append((entry, size_text, modified_text, modified_timestamp))
+                    size_bytes = 0
+                files_with_details.append(
+                    (entry, size_text, modified_text, modified_timestamp, size_bytes)
+                )
 
             # Newest files appear first, with the path providing a stable
             # secondary order for files modified at the same instant.
-            for entry, size_text, modified_text, _ in sorted(
+            for entry, size_text, modified_text, _, size_bytes in sorted(
                 files_with_details,
                 key=lambda file: (file[3], str(file[0].path).casefold()),
                 reverse=True,
@@ -466,10 +730,12 @@ class Simility(QMainWindow):
                     [entry.path.name, str(entry.path.parent), size_text, modified_text]
                 )
                 item.setData(0, Qt.ItemDataRole.UserRole, str(entry.path))
+                item.setData(0, FILE_SIZE_ROLE, size_bytes)
                 item.setFlags(item.flags() | Qt.ItemFlag.ItemIsUserCheckable)
                 item.setCheckState(0, Qt.CheckState.Unchecked)
                 group.addChild(item)
                 file_count += 1
+            self._update_group_title(group)
         self.results.blockSignals(False)
         percentage = self.similarity_slider.value()
         if groups:
@@ -480,16 +746,45 @@ class Simility(QMainWindow):
             self.statusBar().showMessage("Try lowering the similarity percentage.")
 
     def _group_checkbox_changed(self, item: QTreeWidgetItem, _: int) -> None:
-        # Qt propagates checks automatically with ItemIsAutoTristate; this keeps
-        # the summary/status lightweight while selections change.
-        self.statusBar().showMessage(f"{len(self._checked_file_paths())} file(s) selected for cleanup.")
+        # Qt propagates checks automatically with ItemIsAutoTristate; refresh
+        # the affected summaries after the final child state is applied.
+        self._refresh_group_titles()
+        self._show_selection_summary()
+
+    def _refresh_group_titles(self) -> None:
+        """Update every group header with the total size of checked files."""
+
+        self.results.blockSignals(True)
+        try:
+            for row in range(self.results.topLevelItemCount()):
+                self._update_group_title(self.results.topLevelItem(row))
+        finally:
+            self.results.blockSignals(False)
+
+    def _update_group_title(self, group: QTreeWidgetItem) -> None:
+        """Set a group's title while retaining its original matched prefix."""
+
+        prefix = group.data(0, Qt.ItemDataRole.UserRole)
+        selected_items = [
+            group.child(index)
+            for index in range(group.childCount())
+            if group.child(index).checkState(0) == Qt.CheckState.Checked
+        ]
+        title = f'“{prefix}” — {group.childCount()} matching files'
+        if selected_items:
+            selected_size = sum(
+                int(item.data(0, FILE_SIZE_ROLE) or 0) for item in selected_items
+            )
+            title += f" (Selected size: {self._format_size(selected_size)})"
+        group.setText(0, title)
 
     def _set_all_checks(self, state: Qt.CheckState) -> None:
         self.results.blockSignals(True)
         for row in range(self.results.topLevelItemCount()):
             self.results.topLevelItem(row).setCheckState(0, state)
         self.results.blockSignals(False)
-        self.statusBar().showMessage(f"{len(self._checked_file_paths())} file(s) selected for cleanup.")
+        self._refresh_group_titles()
+        self._show_selection_summary()
 
     def _select_older_files(self) -> None:
         """Select every file except the newest one in each matching group."""
@@ -509,9 +804,8 @@ class Simility(QMainWindow):
                 )
                 item.setCheckState(0, state)
         self.results.blockSignals(False)
-        self.statusBar().showMessage(
-            f"{len(self._checked_file_paths())} older file(s) selected for cleanup."
-        )
+        self._refresh_group_titles()
+        self._show_selection_summary()
 
     def _reverse_selection(self) -> None:
         """Invert the selected state of every file currently shown."""
@@ -528,8 +822,24 @@ class Simility(QMainWindow):
                 )
                 item.setCheckState(0, state)
         self.results.blockSignals(False)
+        self._refresh_group_titles()
+        self._show_selection_summary()
+
+    def _show_selection_summary(self) -> None:
+        """Show the selected file count and aggregate byte size in the footer."""
+
+        selected_count = 0
+        selected_size = 0
+        for row in range(self.results.topLevelItemCount()):
+            group = self.results.topLevelItem(row)
+            for index in range(group.childCount()):
+                item = group.child(index)
+                if item.checkState(0) == Qt.CheckState.Checked:
+                    selected_count += 1
+                    selected_size += int(item.data(0, FILE_SIZE_ROLE) or 0)
         self.statusBar().showMessage(
-            f"{len(self._checked_file_paths())} file(s) selected for cleanup."
+            f"{selected_count} file(s) selected for cleanup. "
+            f"Selected files size: {self._format_size(selected_size)}."
         )
 
     @staticmethod
